@@ -6,6 +6,7 @@
 
   <title>EvoGuard IDS Dashboard</title>
 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -41,6 +42,40 @@
         <p id="pathCount">0</p>
       </article>
     </section>
+
+<section class="chart-section">
+  <div class="section-heading">
+    <h2>Attack Distribution</h2>
+    <p>Detected attacks grouped by type.</p>
+  </div>
+
+  <div class="chart-wrapper">
+    <canvas id="attackChart"></canvas>
+  </div>
+</section>
+
+<section class="simulator-section">
+  <div class="section-heading">
+    <h2>Attack Simulator</h2>
+    <p>Launch safe test payloads against the IDS middleware.</p>
+  </div>
+
+  <div class="simulator-grid">
+    <button class="attack-button" data-attack="sql">
+      Simulate SQL Injection
+    </button>
+
+    <button class="attack-button" data-attack="xss">
+      Simulate XSS
+    </button>
+
+    <button class="attack-button" data-attack="path">
+      Simulate Path Traversal
+    </button>
+  </div>
+
+  <p id="simulationResult">No attack simulated yet.</p>
+</section>
 
     <section class="table-section">
       <div class="section-heading">

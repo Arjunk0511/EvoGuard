@@ -108,8 +108,8 @@ td {
 }
 
 th {
-  background: #f8fafc;
-  color: #475569;
+  background: #1e293b;
+  color: white;
 }
 
 .attack-type {
@@ -119,26 +119,44 @@ th {
 
 .risk-score {
   font-weight: bold;
+  padding: 6px 10px;
+  border-radius: 6px;
+  display: inline-block;
+  min-width: 45px;
+  text-align: center;
+}
+
+.risk-low {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.risk-medium {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.risk-high {
+  background: #fee2e2;
+  color: #dc2626;
 }
 
 .action-block {
-  display: inline-block;
-  background: #fee2e2;
-  color: #b91c1c;
-  padding: 4px 9px;
+  background: #dc2626;
+  color: white;
+  padding: 6px 12px;
   border-radius: 999px;
-  font-size: 13px;
   font-weight: bold;
+  font-size: 12px;
 }
 
 .action-monitor {
-  display: inline-block;
-  background: #fef3c7;
-  color: #92400e;
-  padding: 4px 9px;
+  background: #facc15;
+  color: black;
+  padding: 6px 12px;
   border-radius: 999px;
-  font-size: 13px;
   font-weight: bold;
+  font-size: 12px;
 }
 
 .empty-row {
@@ -171,4 +189,87 @@ th {
     flex-direction: column;
     gap: 16px;
   }
+}
+
+.chart-section {
+  background: white;
+  border-radius: 10px;
+  padding: 24px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.chart-wrapper {
+  position: relative;
+  height: 320px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.simulator-section {
+  background: white;
+  border-radius: 10px;
+  padding: 24px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.simulator-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 18px;
+  margin-bottom: 16px;
+}
+
+.attack-button {
+  border: none;
+  background: #dc2626;
+  color: white;
+  padding: 11px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.attack-button:hover {
+  background: #b91c1c;
+}
+
+.attack-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+#simulationResult {
+  color: #475569;
+  font-size: 14px;
+}
+
+.attack-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 999px;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  margin-right: 6px;
+  margin-bottom: 4px;
+}
+
+.attack-sql {
+  background: #ef4444;
+}
+
+.attack-xss {
+  background: #f97316;
+}
+
+.attack-path {
+  background: #7c3aed;
+}
+
+tbody tr:hover {
+  background: #f8fafc;
 }
