@@ -102,6 +102,34 @@
         </table>
       </div>
     </section>
+
+    <section class="table-section">
+  <div class="section-heading">
+    <h2>Blocked IPs</h2>
+    <p id="blacklistStatusMessage">Loading blacklisted IPs...</p>
+  </div>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>IP Address</th>
+          <th>Risk Status</th>
+          <th>Risk Score</th>
+          <th>Reason</th>
+          <th>Behavior Types</th>
+          <th>Blocked Requests</th>
+          <th>Blacklisted At</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody id="blacklistTableBody">
+      </tbody>
+    </table>
+  </div>
+</section>
+
   </main>
 
   <script src="script.js"></script>
