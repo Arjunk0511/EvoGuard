@@ -1,20 +1,59 @@
-# ==========================================
-# Risk Engine
-# ==========================================
+class BehavioralRiskEngine:
 
+    def __init__(
+        self,
+        low_threshold=30,
+        medium_threshold=60,
+        high_threshold=80
+    ):
 
-def calculate_behavior_risk(prediction, confidence):
+        self.low_threshold = low_threshold
+        self.medium_threshold = medium_threshold
+        self.high_threshold = high_threshold
 
-    confidence = confidence * 100
+    def calculate_risk(self, confidence):
 
-    if prediction == 1:
+        # Confidence is between 0 and 1.
+        #
+        # High confidence in a known behavioral
+        # pattern = lower behavioral risk.
+        #
+        # Low confidence = higher behavioral risk.
 
-        risk = confidence
+        risk_score = (
+            1.0 - confidence
+        ) * 100
 
-    else:
+        risk_score = max(
+            0,
+            min(
+                100,
+                risk_score
+            )
+        )
 
-        risk = 100 - confidence
+        risk_score = round(
+            risk_score,
+            2
+        )
 
-    risk = max(0, min(100, risk))
+        if risk_score < self.low_threshold:
 
-    return round(risk)
+            status = "LOW"
+
+        elif risk_score < self.medium_threshold:
+
+            status = "MEDIUM"
+
+        elif risk_score < self.high_threshold:
+
+            status = "HIGH"
+
+        else:
+
+            status = "CRITICAL"
+
+        return {
+            "risk_score": risk_score,
+            "status": status
+        }

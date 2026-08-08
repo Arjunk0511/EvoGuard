@@ -1,25 +1,54 @@
-# ==========================================
-# Feature Validator
-# ==========================================
-
-from config import FEATURE_PATH
-import joblib
-
-required_features = joblib.load(FEATURE_PATH)
+import math
 
 
-def validate_features(data):
+class FeatureValidator:
 
-    missing = []
+    def __init__(self, expected_features):
+        self.expected_features = expected_features
 
-    for feature in required_features:
+    def validate(self, features):
 
-        if feature not in data:
+        if not isinstance(features, dict):
+            raise ValueError(
+                "Features must be provided as a dictionary."
+            )
 
-            missing.append(feature)
+        missing = [
+            feature
+            for feature in self.expected_features
+            if feature not in features
+        ]
 
-    if missing:
+        if missing:
+            raise ValueError(
+                "Missing features: "
+                + ", ".join(missing)
+            )
 
-        return False, missing
+        invalid = []
 
-    return True, []
+        for feature in self.expected_features:
+
+            value = features[feature]
+
+            if not isinstance(
+                value,
+                (int, float)
+            ):
+                invalid.append(
+                    f"{feature} is not numeric"
+                )
+                continue
+
+            if not math.isfinite(value):
+                invalid.append(
+                    f"{feature} contains NaN/Infinity"
+                )
+
+        if invalid:
+            raise ValueError(
+                "Invalid feature values: "
+                + "; ".join(invalid)
+            )
+
+        return True

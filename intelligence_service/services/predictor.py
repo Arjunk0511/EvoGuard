@@ -1,46 +1,124 @@
-# ==========================================
-# Predictor Service
-# ==========================================
+from intelligence_service.services.model_service import (
+    BehavioralModelService
+)
 
-import joblib
-import pandas as pd
+from intelligence_service.services.behavior_features import (
+    BehavioralFeatureExtractor
+)
 
-from config import MODEL_PATH, SCALER_PATH, FEATURE_PATH
+from intelligence_service.services.risk_engine import (
+    BehavioralRiskEngine
+)
 
 
-class BehaviorPredictor:
+class BehavioralPredictor:
 
     def __init__(self):
 
-        print("Loading Behavioral ML Model...")
+        self.feature_extractor = (
+            BehavioralFeatureExtractor()
+        )
 
-        self.model = joblib.load(MODEL_PATH)
+        self.model_service = (
+            BehavioralModelService()
+        )
 
-        self.scaler = joblib.load(SCALER_PATH)
+        self.risk_engine = (
+            BehavioralRiskEngine()
+        )
 
-        self.feature_columns = joblib.load(FEATURE_PATH)
+    # --------------------------------------------------
+    # PREDICT FROM RAW BEHAVIORAL EVENTS
+    # --------------------------------------------------
 
-        print("Model Loaded Successfully")
+    def predict_from_events(self, events):
 
-    def predict(self, feature_dict):
+        # --------------------------------------------------
+        # STEP 1
+        # Extract behavioral features
+        # --------------------------------------------------
 
-        df = pd.DataFrame([feature_dict])
+        features = (
+            self.feature_extractor.extract(
+                events
+            )
+        )
 
-        df = df[self.feature_columns]
+        # --------------------------------------------------
+        # STEP 2
+        # Model prediction
+        #
+        # 81 generated features
+        #        ↓
+        # required 40 features
+        #        ↓
+        # StandardScaler
+        #        ↓
+        # SelectKBest
+        #        ↓
+        # 20 selected features
+        #        ↓
+        # Logistic Regression
+        # --------------------------------------------------
 
-        prediction = self.model.predict(df)[0]
+        prediction = (
+            self.model_service.predict(
+                features
+            )
+        )
 
-        probability = self.model.predict_proba(df)[0]
+        # --------------------------------------------------
+        # STEP 3
+        # Get confidence
+        # --------------------------------------------------
 
-        confidence = float(max(probability))
+        confidence = prediction.get(
+            "confidence"
+        )
+
+        if confidence is None:
+
+            raise ValueError(
+                "Model confidence is unavailable."
+            )
+
+        # --------------------------------------------------
+        # STEP 4
+        # Calculate behavioral risk
+        # --------------------------------------------------
+
+        risk = (
+            self.risk_engine.calculate_risk(
+                confidence
+            )
+        )
+
+        # --------------------------------------------------
+        # STEP 5
+        # Final result
+        # --------------------------------------------------
 
         return {
 
-            "prediction": int(prediction),
+            "prediction":
+                prediction.get(
+                    "prediction"
+                ),
 
-            "confidence": confidence
+            "confidence":
+                confidence,
 
-    }
+            "probabilities":
+                prediction.get(
+                    "probabilities"
+                ),
 
+            "risk_score":
+                risk["risk_score"],
 
-predictor = BehaviorPredictor()
+            "risk_status":
+                risk["status"],
+
+            "features_generated":
+                len(features)
+        }

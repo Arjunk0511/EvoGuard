@@ -1,54 +1,158 @@
-# ==========================================
-# Prediction Route
-# ==========================================
+from flask import Blueprint, request, jsonify
 
-from flask import Blueprint, request
-
-from services.predictor import predictor
-from services.risk_engine import calculate_behavior_risk
-from services.feature_validator import validate_features
-
-from utils.response import success, error
-from utils.logger import logger
-
-predict_bp = Blueprint("predict", __name__)
+from intelligence_service.services.predictor import (
+    BehavioralPredictor
+)
 
 
-@predict_bp.route("/predict", methods=["POST"])
+# --------------------------------------------------
+# BLUEPRINT
+# --------------------------------------------------
+
+predict_bp = Blueprint(
+    "predict",
+    __name__
+)
+
+
+# --------------------------------------------------
+# PREDICTOR
+# --------------------------------------------------
+
+predictor = BehavioralPredictor()
+
+
+# --------------------------------------------------
+# POST /api/predict
+# --------------------------------------------------
+
+@predict_bp.route(
+    "/predict",
+    methods=["POST"]
+)
 def predict():
 
     try:
 
-        data = request.get_json()
+        # --------------------------------------------------
+        # GET REQUEST BODY
+        # --------------------------------------------------
 
-        valid, missing = validate_features(data)
-
-        if not valid:
-            return error(f"Missing Features: {missing}")
-
-        result = predictor.predict(data)
-
-        behavior_risk = calculate_behavior_risk(
-            result["prediction"],
-            result["confidence"]
+        data = request.get_json(
+            silent=True
         )
 
-        response = {
+        if data is None:
 
-            "prediction": result["prediction"],
+            return jsonify({
+                "success": False,
+                "error": "Request body must be valid JSON."
+            }), 400
 
-            "confidence": round(result["confidence"], 4),
 
-            "behaviorRisk": behavior_risk
+        # --------------------------------------------------
+        # GET EVENTS
+        # --------------------------------------------------
 
-        }
+        events = data.get(
+            "events"
+        )
 
-        logger.info(response)
+        if events is None:
 
-        return success(response)
+            return jsonify({
+                "success": False,
+                "error": "Missing 'events' field."
+            }), 400
 
-    except Exception as e:
 
-        logger.exception(e)
+        # --------------------------------------------------
+        # VALIDATE EVENTS
+        # --------------------------------------------------
 
-        return error(str(e))
+        if not isinstance(
+            events,
+            list
+        ):
+
+            return jsonify({
+                "success": False,
+                "error": "'events' must be a list."
+            }), 400
+
+
+        if len(events) == 0:
+
+            return jsonify({
+                "success": False,
+                "error": "'events' cannot be empty."
+            }), 400
+
+
+        # --------------------------------------------------
+        # RUN BEHAVIORAL PREDICTION
+        # --------------------------------------------------
+
+        result = predictor.predict_from_events(
+            events
+        )
+
+
+        # --------------------------------------------------
+        # RESPONSE
+        # --------------------------------------------------
+
+        return jsonify({
+
+            "success": True,
+
+            "service":
+                "EvoGuard Intelligence Service",
+
+            "module":
+                "Behavioral Intelligence",
+
+            "version":
+                "2.0",
+
+            "result":
+                result
+
+        }), 200
+
+
+    # --------------------------------------------------
+    # VALIDATION / MODEL ERRORS
+    # --------------------------------------------------
+
+    except ValueError as error:
+
+        return jsonify({
+
+            "success": False,
+
+            "error":
+                str(error)
+
+        }), 400
+
+
+    # --------------------------------------------------
+    # UNEXPECTED ERRORS
+    # --------------------------------------------------
+
+    except Exception as error:
+
+        print(
+            "[PREDICT ERROR]",
+            str(error)
+        )
+
+        return jsonify({
+
+            "success": False,
+
+            "error":
+                "Internal prediction error."
+
+        }), 500
