@@ -1,0 +1,22 @@
+{
+    "session_duration": 35.4,
+    "movement_count": 248,
+    "click_count": 12,
+    "drag_count": 3,
+    "total_distance": 1860.5,
+    "avg_speed": 52.3,
+    "max_speed": 148.7,
+    "min_speed": 0.5,
+    "speed_std": 18.2,
+    "avg_acceleration": 26.8,
+    "max_acceleration": 94.5,
+    "min_acceleration": -8.1,
+    "acceleration_std": 15.6,
+    "avg_angle": 91.3,
+    "angle_std": 34.7,
+    "curvature": 0.41,
+    "entropy": 3.72,
+    "x_variance": 124.5,
+    "y_variance": 118.9,
+    "straightness": 0.82
+}
