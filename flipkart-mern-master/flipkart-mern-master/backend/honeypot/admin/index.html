@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard</title>
+
+    <link rel="stylesheet" href="/honeypot/admin/styles.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            EvoGuard
+            <span>Admin</span>
+        </div>
+
+        <nav>
+            <button onclick="navigate('dashboard')">Dashboard</button>
+            <button onclick="navigate('users')">Users</button>
+            <button onclick="navigate('orders')">Orders</button>
+            <button onclick="navigate('products')">Products</button>
+            <button onclick="navigate('settings')">Settings</button>
+        </nav>
+
+    </aside>
+
+
+    <!-- Main content -->
+    <main class="main">
+
+        <header class="topbar">
+            <h1 id="pageTitle">Dashboard</h1>
+
+            <div class="admin-user">
+                Admin
+            </div>
+        </header>
+
+
+        <section id="content">
+
+            <!-- Dashboard -->
+            <div id="dashboardPage">
+
+                <div class="cards">
+
+                    <div class="card">
+                        <h3>Users</h3>
+                        <p>1,284</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Orders</h3>
+                        <p>438</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Products</h3>
+                        <p>167</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Revenue</h3>
+                        <p>₹8,42,000</p>
+                    </div>
+
+                </div>
+
+                <div class="panel">
+
+                    <h2>Recent Activity</h2>
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Action</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>admin01</td>
+                                <td>Updated product</td>
+                                <td>Completed</td>
+                            </tr>
+
+                            <tr>
+                                <td>manager02</td>
+                                <td>Viewed orders</td>
+                                <td>Completed</td>
+                            </tr>
+
+                            <tr>
+                                <td>support01</td>
+                                <td>Updated user</td>
+                                <td>Completed</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- Dynamic pages -->
+            <div id="dynamicPage" class="hidden">
+
+                <div class="panel">
+
+                    <h2 id="dynamicTitle"></h2>
+
+                    <div id="dynamicContent"></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="/honeypot/admin/script.js"></script>
+
+</body>
+</html>
