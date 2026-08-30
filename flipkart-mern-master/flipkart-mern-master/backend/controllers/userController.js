@@ -6,6 +6,11 @@ const sendEmail = require('../utils/sendEmail');
 const crypto = require('crypto');
 const cloudinary = require('cloudinary');
 
+const {
+    recordFailedAttempt,
+    clearAttempts
+} = require('../security/detectors/bruteForceDetector');
+
 // Register User
 exports.registerUser = asyncErrorHandler(async (req, res, next) => {
 
@@ -33,25 +38,100 @@ exports.registerUser = asyncErrorHandler(async (req, res, next) => {
 
 // Login User
 exports.loginUser = asyncErrorHandler(async (req, res, next) => {
+
     const { email, password } = req.body;
 
-    if(!email || !password) {
-        return next(new ErrorHandler("Please Enter Email And Password", 400));
+
+    // -----------------------------------------
+    // Get client IP
+    // -----------------------------------------
+
+    const ip =
+        req.ip ||
+        req.headers["x-forwarded-for"] ||
+        req.connection?.remoteAddress ||
+        "unknown";
+
+
+    // -----------------------------------------
+    // Validate input
+    // -----------------------------------------
+
+    if (!email || !password) {
+
+        return next(
+            new ErrorHandler(
+                "Please Enter Email And Password",
+                400
+            )
+        );
+
     }
 
-    const user = await User.findOne({ email}).select("+password");
 
-    if(!user) {
-        return next(new ErrorHandler("Invalid Email or Password", 401));
+    // -----------------------------------------
+    // Find user
+    // -----------------------------------------
+
+    const user =
+        await User
+            .findOne({ email })
+            .select("+password");
+
+
+    // -----------------------------------------
+    // User doesn't exist
+    // -----------------------------------------
+
+    if (!user) {
+
+        recordFailedAttempt(ip);
+
+        return next(
+            new ErrorHandler(
+                "Invalid Email or Password",
+                401
+            )
+        );
+
     }
 
-    const isPasswordMatched = await user.comparePassword(password);
 
-    if(!isPasswordMatched) {
-        return next(new ErrorHandler("Invalid Email or Password", 401));
+    // -----------------------------------------
+    // Check password
+    // -----------------------------------------
+
+    const isPasswordMatched =
+        await user.comparePassword(password);
+
+
+    // -----------------------------------------
+    // Wrong password
+    // -----------------------------------------
+
+    if (!isPasswordMatched) {
+
+        recordFailedAttempt(ip);
+
+        return next(
+            new ErrorHandler(
+                "Invalid Email or Password",
+                401
+            )
+        );
+
     }
 
-    sendToken(user, 201, res);
+
+    // -----------------------------------------
+    // Successful login
+    // -----------------------------------------
+
+    clearAttempts(ip);
+
+
+    sendToken(user, 200, res);
+
 });
 
 // Logout User
