@@ -12,6 +12,8 @@ module.exports = {
 
     bruteForceDetector: require("./bruteForceDetector"),
 
-    requestRateDetector: require("./requestRateDetector")
+    requestRateDetector: require("./requestRateDetector"),
+
+    adminEnumerationDetector: require("./adminEnumerationDetector")
 
 };
