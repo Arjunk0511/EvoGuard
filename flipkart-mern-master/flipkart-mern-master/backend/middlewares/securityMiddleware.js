@@ -6,11 +6,11 @@
  * suspicious request to a honeypot.
  */
 
-const analyzeRequest = require("../security/riskEngine");
+const analyzeRequest = require("../../server/security/riskEngine");
 
 const {
     selectHoneypot
-} = require("../security/deceptionService");
+} = require("../services/deceptionService");
 
 
 function securityMiddleware(req, res, next) {
