@@ -9,7 +9,7 @@ const cloudinary = require('cloudinary');
 const {
     recordFailedAttempt,
     clearAttempts
-} = require('../security/detectors/bruteForceDetector');
+} = require('../../server/security/detectors/bruteForceDetector');
 
 // Register User
 exports.registerUser = asyncErrorHandler(async (req, res, next) => {
