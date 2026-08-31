@@ -19,6 +19,8 @@ const RISK_SCORES = {
 
     HIGH_REQUEST_RATE: 50,
 
+    ADMIN_ENUMERATION: 80,
+
     USER_AGENT: {
 
         SQLMAP: 25,

@@ -12,7 +12,8 @@ const {
     suspiciousUrlDetector,
     botDetector,
     bruteForceDetector,
-    requestRateDetector
+    requestRateDetector,
+    adminEnumerationDetector
 } = require("./detectors");
 
 const { RISK_THRESHOLDS } = require("./constants");
@@ -46,6 +47,8 @@ function analyzeRequest(req) {
         suspiciousUrlDetector(req),
 
         botDetector(req),
+
+        adminEnumerationDetector(req),
 
         bruteForceDetector.checkBruteForce(ip),
 
