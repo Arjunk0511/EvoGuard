@@ -6,3 +6,5 @@ document.querySelector("form")
     alert("Invalid credentials");
 
 });
+
+console.log("Login honeypot loaded");
