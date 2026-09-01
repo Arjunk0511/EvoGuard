@@ -6,7 +6,7 @@
  * suspicious request to a honeypot.
  */
 
-const analyzeRequest = require("../../server/security/riskEngine");
+const analyzeRequest = require("../../../../server/security/riskEngine");
 
 const {
     selectHoneypot
