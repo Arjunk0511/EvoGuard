@@ -9,7 +9,7 @@ const REGISTER_RATE_LIMIT = {
 };
 
 const ADMIN_RATE_LIMIT = {
-  windowMs: 1 * 60 * 1000, // 15 minutes
+  windowMs: 15 * 60 * 1000, // 15 minutes
   limit: 30,                // Maximum 30 admin requests
 };
 
