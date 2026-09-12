@@ -7,6 +7,7 @@ app = Flask(__name__)
 def home():
     return "EvoGuard Intelligence Service Running"
 
+
 @app.route("/anomaly", methods=["POST"])
 def anomaly():
 
@@ -16,19 +17,28 @@ def anomaly():
         data["features"]
     )
 
-    if score < 30:
-        status = "NORMAL"
-    elif score < 70:
-        status = "SUSPICIOUS"
+    # Status Logic
+    if prediction == 1:
+
+        if score > 50:
+            status = "SUSPICIOUS"
+        else:
+            status = "NORMAL"
+
     else:
-        status = "ANOMALOUS"
+
+        if score > 80:
+            status = "ANOMALOUS"
+        else:
+            status = "SUSPICIOUS"
 
     return jsonify({
-        "anomaly_score": score,
+        "anomaly_score": round(score, 2),
         "confidence": round(score / 100, 2),
         "status": status,
         "prediction": int(prediction)
     })
+
 
 if __name__ == "__main__":
     app.run(
