@@ -1,0 +1,50 @@
+{
+  "report_version": "1.0",
+  "session_id": "589ea35ae15eba07fd11fa28d582b36f",
+  "user_id": null,
+  "identity": "anonymous_visit",
+  "started_at": "2026-10-08T17:03:37.537335+00:00",
+  "last_received_at": "2026-10-08T17:04:07.596580+00:00",
+  "status": "scored",
+  "latest_result": {
+    "method": "reference_similarity_v1",
+    "enforcement_allowed": false,
+    "window_ms": 30000,
+    "evidence": {
+      "mouse_pairs": 122,
+      "key_pairs": 5
+    },
+    "note": "Reference similarity index; not a probability or measured accuracy.",
+    "status": "scored",
+    "risk_score": 41.5,
+    "comparison": "closer_to_human",
+    "closest_bot_pattern": "curved_motion",
+    "human_distance": 0.3602,
+    "bot_distance": 0.5081
+  },
+  "windows": [
+    {
+      "window_index": 0,
+      "received_at": "2026-10-08T17:04:07.596580+00:00",
+      "payload_digest": "84ba11ede9c6026d1777bc573a08776ba24feda7e7551939b05085a5ef61b0ec",
+      "result": {
+        "method": "reference_similarity_v1",
+        "enforcement_allowed": false,
+        "window_ms": 30000,
+        "evidence": {
+          "mouse_pairs": 122,
+          "key_pairs": 5
+        },
+        "note": "Reference similarity index; not a probability or measured accuracy.",
+        "status": "scored",
+        "risk_score": 41.5,
+        "comparison": "closer_to_human",
+        "closest_bot_pattern": "curved_motion",
+        "human_distance": 0.3602,
+        "bot_distance": 0.5081
+      }
+    }
+  ],
+  "ids_action": "observation_only",
+  "note": "Similarity score, not measured accuracy. No automatic blocking."
+}

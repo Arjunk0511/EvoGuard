@@ -1,0 +1,59 @@
+{
+  "report_version": "1.0",
+  "session_id": "e8079bd0fa9f53c476aba96bfebc2d38",
+  "user_id": null,
+  "identity": "anonymous_visit",
+  "started_at": "2026-10-08T17:04:42.145057+00:00",
+  "last_received_at": "2026-10-08T17:05:42.932906+00:00",
+  "status": "insufficient_evidence",
+  "latest_result": {
+    "method": "reference_similarity_v1",
+    "enforcement_allowed": false,
+    "window_ms": 30000,
+    "evidence": {
+      "mouse_pairs": 0,
+      "key_pairs": 0
+    },
+    "note": "Reference similarity index; not a probability or measured accuracy.",
+    "status": "insufficient_evidence",
+    "risk_score": null
+  },
+  "windows": [
+    {
+      "window_index": 0,
+      "received_at": "2026-10-08T17:05:12.924993+00:00",
+      "payload_digest": "149ff797438e86e01ea35083ba096866578e034da61147c8ea62fc73b7d5fee7",
+      "result": {
+        "method": "reference_similarity_v1",
+        "enforcement_allowed": false,
+        "window_ms": 30000,
+        "evidence": {
+          "mouse_pairs": 11,
+          "key_pairs": 0
+        },
+        "note": "Reference similarity index; not a probability or measured accuracy.",
+        "status": "insufficient_evidence",
+        "risk_score": null
+      }
+    },
+    {
+      "window_index": 1,
+      "received_at": "2026-10-08T17:05:42.931900+00:00",
+      "payload_digest": "4638d84c5dcd06d5b4158d293dd924e9b0eacb8afe8210ac973bf90fa5e3e63c",
+      "result": {
+        "method": "reference_similarity_v1",
+        "enforcement_allowed": false,
+        "window_ms": 30000,
+        "evidence": {
+          "mouse_pairs": 0,
+          "key_pairs": 0
+        },
+        "note": "Reference similarity index; not a probability or measured accuracy.",
+        "status": "insufficient_evidence",
+        "risk_score": null
+      }
+    }
+  ],
+  "ids_action": "observation_only",
+  "note": "Similarity score, not measured accuracy. No automatic blocking."
+}

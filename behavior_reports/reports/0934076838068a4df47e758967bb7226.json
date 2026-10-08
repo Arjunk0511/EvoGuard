@@ -1,0 +1,80 @@
+{
+  "report_version": "1.0",
+  "session_id": "0934076838068a4df47e758967bb7226",
+  "user_id": null,
+  "identity": "anonymous_visit",
+  "started_at": "2026-10-08T17:14:19.876828+00:00",
+  "last_received_at": "2026-10-08T17:15:49.910940+00:00",
+  "status": "insufficient_evidence",
+  "latest_result": {
+    "method": "reference_similarity_v1",
+    "enforcement_allowed": false,
+    "window_ms": 30000,
+    "evidence": {
+      "mouse_pairs": 0,
+      "key_pairs": 0
+    },
+    "note": "Reference similarity index; not a probability or measured accuracy.",
+    "status": "insufficient_evidence",
+    "risk_score": null
+  },
+  "windows": [
+    {
+      "window_index": 0,
+      "received_at": "2026-10-08T17:14:49.909862+00:00",
+      "payload_digest": "56778e03b2454a717b6b4cbd426218c65dd100de4f7c31280d65fe8586d9d947",
+      "result": {
+        "method": "reference_similarity_v1",
+        "enforcement_allowed": false,
+        "window_ms": 30000,
+        "evidence": {
+          "mouse_pairs": 134,
+          "key_pairs": 29
+        },
+        "note": "Reference similarity index; not a probability or measured accuracy.",
+        "status": "scored",
+        "risk_score": 38.4,
+        "comparison": "closer_to_human",
+        "closest_bot_pattern": "curved_motion",
+        "human_distance": 0.4984,
+        "bot_distance": 0.8011
+      }
+    },
+    {
+      "window_index": 1,
+      "received_at": "2026-10-08T17:15:19.923409+00:00",
+      "payload_digest": "17b3c329add18366400faadaedc08925c145b7b62bf5078ae85fbdbe4a72724c",
+      "result": {
+        "method": "reference_similarity_v1",
+        "enforcement_allowed": false,
+        "window_ms": 30000,
+        "evidence": {
+          "mouse_pairs": 88,
+          "key_pairs": 3
+        },
+        "note": "Reference similarity index; not a probability or measured accuracy.",
+        "status": "insufficient_evidence",
+        "risk_score": null
+      }
+    },
+    {
+      "window_index": 2,
+      "received_at": "2026-10-08T17:15:49.910940+00:00",
+      "payload_digest": "4638d84c5dcd06d5b4158d293dd924e9b0eacb8afe8210ac973bf90fa5e3e63c",
+      "result": {
+        "method": "reference_similarity_v1",
+        "enforcement_allowed": false,
+        "window_ms": 30000,
+        "evidence": {
+          "mouse_pairs": 0,
+          "key_pairs": 0
+        },
+        "note": "Reference similarity index; not a probability or measured accuracy.",
+        "status": "insufficient_evidence",
+        "risk_score": null
+      }
+    }
+  ],
+  "ids_action": "observation_only",
+  "note": "Similarity score, not measured accuracy. No automatic blocking."
+}
