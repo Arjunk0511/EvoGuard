@@ -1,0 +1,57 @@
+{
+  "version": "evoguard_exploratory_1",
+  "feature_version": "pilot_features_1.0",
+  "window_ms": 30000,
+  "features": [
+    "mouse_speed_css_px_s_mean",
+    "mouse_speed_css_px_s_std",
+    "mouse_speed_css_px_s_median",
+    "key_hold_ms_mean",
+    "key_hold_ms_std",
+    "key_hold_ms_median",
+    "keydown_interval_ms_mean",
+    "keydown_interval_ms_std",
+    "keydown_interval_ms_median"
+  ],
+  "mean": [
+    1883.8824455170961,
+    1396.1226029713591,
+    1751.312495155144,
+    80.78097318355188,
+    56.11336225269622,
+    71.11388888863992,
+    248.89410953396788,
+    200.06751742013034,
+    188.3905555561037
+  ],
+  "scale": [
+    1412.6079761996575,
+    549.9214884010884,
+    1795.3640904560434,
+    53.178920501297306,
+    93.65555991719847,
+    32.850019683399914,
+    167.32603136787029,
+    217.88402471233712,
+    101.93131637591806
+  ],
+  "weights": [
+    0.8902102552174211,
+    0.4694884263000909,
+    0.972768803404699,
+    -0.5346473449934205,
+    -0.1785361144798959,
+    -0.8548091802056691,
+    -0.7699893834659965,
+    -0.6742192787144183,
+    -0.7649100338688827
+  ],
+  "intercept": -0.7023790701231295,
+  "classes": [
+    "human",
+    "bot"
+  ],
+  "status": "exploratory_only",
+  "calibrated": false,
+  "enforcement_allowed": false
+}

@@ -1,0 +1,34 @@
+{
+  "purpose": "frozen-model test; do not train on these outputs",
+  "model_sha256": "0738029c8143087e3d43ae71ee334c2036455c0996954a28a54a819b3effbbb8",
+  "threshold": 0.5,
+  "window_ms": 30000,
+  "coverage_gate": "at least 5 mouse-speed pairs and 5 key-hold pairs",
+  "unseen_human_ids": [
+    "user13",
+    "user14",
+    "user15"
+  ],
+  "returning_human_ids": [
+    "user11",
+    "user12"
+  ],
+  "profiles": [
+    "burst_pause",
+    "curved_motion",
+    "slow_reading"
+  ],
+  "planned_sessions_per_profile": 3,
+  "report": [
+    "per-profile scored-window recall",
+    "per-profile coverage and abstention counts",
+    "unseen-human false-positive rate and coverage",
+    "returning-human supplementary results"
+  ],
+  "limitations": [
+    "Same browser engine and broad tasks as training automation.",
+    "Threshold 0.5 was already used on human test data; it is fixed here, not tuned.",
+    "Human test outcomes already observed; keep model unchanged.",
+    "No enforcement calibration or population accuracy claim."
+  ]
+}

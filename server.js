@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 const idsMiddleware = require("./middleware/idsMiddleware");
 const idsRoutes = require("./routes/idsRoutes");
+const behaviorRoutes = require("./routes/behaviorRoutes");
 
 dotenv.config();
 
@@ -11,6 +12,9 @@ connectDB();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+// Dataset parser must run before the general body parser.
+app.use("/api/behavior/dataset/v2", require("./routes/behaviorDatasetRoutes"));
 
 app.use(cors());
 app.use(express.json());
@@ -27,6 +31,11 @@ app.get("/api/health", (req, res) => {
 
 // IDS logs route must be mounted before IDS middleware
 app.use("/api/ids", idsRoutes);
+
+// Behavioral data-collection/prediction traffic is also excluded from
+// the rule-based IDS middleware — it's high-volume telemetry, not
+// application traffic to inspect for injection/XSS patterns.
+app.use("/api/behavior", behaviorRoutes);
 
 // Apply IDS middleware to remaining API routes
 app.use("/api", idsMiddleware);

@@ -11,10 +11,14 @@ if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config({ path: 'backend/config/config.env' });
 }
 
-app.use(express.json());
 app.use(cookieParser());
+const evoGuard = require('./evoguard/integration');
+app.use('/api/behavior/live', evoGuard.router);
+app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(fileUpload());
+
+app.use('/api/v1', evoGuard.inspect);
 
 const user = require('./routes/userRoute');
 const product = require('./routes/productRoute');

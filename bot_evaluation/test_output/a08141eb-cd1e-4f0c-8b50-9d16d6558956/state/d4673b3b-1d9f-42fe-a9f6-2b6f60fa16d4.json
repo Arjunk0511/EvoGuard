@@ -1,0 +1,73 @@
+{
+  "start_digest": "1f04ea4bdfc8013100868fb83b0c946912313580437944016b59afd8018363c2",
+  "batch_digests": [],
+  "finish_digest": null,
+  "session": {
+    "schema_version": "2.0",
+    "dataset_version": "evoguard_bot_v1",
+    "collector_version": "custom_collector_2.0.1",
+    "session_id": "d4673b3b-1d9f-42fe-a9f6-2b6f60fa16d4",
+    "participant_id": "user9000",
+    "behavior_label": "bot",
+    "data_origin": "playwright_browser",
+    "protocol_version": "evomart_local_tasks_v1",
+    "consent": {
+      "status": "not_applicable",
+      "notice_version": "automation_notice_v1"
+    },
+    "input_device": "mouse",
+    "timestamp_unit": "milliseconds",
+    "started_at": "2026-10-05T15:12:53.839Z",
+    "capture_settings": {
+      "mousemove_interval_ms": 25,
+      "scroll_interval_ms": 25,
+      "keyboard_policy": "allowlisted_non_sensitive",
+      "coordinate_unit": "css_pixels",
+      "scroll_mode": "document_absolute"
+    },
+    "initial_context": {
+      "page": "/data-collection",
+      "viewport_width": 1536,
+      "viewport_height": 730,
+      "focused": true,
+      "visible": true
+    },
+    "ended_at": null,
+    "duration_ms": null,
+    "status": "recording",
+    "end_reason": null,
+    "events": [],
+    "integrity": {
+      "last_batch_seq": -1,
+      "event_count": 0,
+      "acknowledged_complete": false
+    },
+    "quality": {
+      "flags": [
+        "incomplete_session",
+        "no_events",
+        "no_keyboard_pairs",
+        "no_mouse_movement"
+      ],
+      "event_counts_by_type": {
+        "mousemove": 0,
+        "mousedown": 0,
+        "mouseup": 0,
+        "click": 0,
+        "scroll": 0,
+        "keydown": 0,
+        "keyup": 0,
+        "focus": 0,
+        "blur": 0,
+        "visibilitychange": 0,
+        "capturepause": 0,
+        "captureresume": 0,
+        "contextchange": 0
+      },
+      "unmatched_keydown_count": 0,
+      "unmatched_mousedown_count": 0,
+      "equal_timestamp_count": 0,
+      "client_counters": null
+    }
+  }
+}

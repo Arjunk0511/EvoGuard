@@ -1,0 +1,417 @@
+{
+  "threshold": 0.5,
+  "model_sha256": "0738029c8143087e3d43ae71ee334c2036455c0996954a28a54a819b3effbbb8",
+  "profiles": {
+    "burst_pause": {
+      "sessions": 3,
+      "full_windows": 18,
+      "scored_windows": 18,
+      "detected_windows": 18,
+      "abstained_windows": 0,
+      "coverage": 1.0,
+      "recall_on_scored_windows": 1.0,
+      "detected_fraction_all_full_windows": 1.0
+    },
+    "curved_motion": {
+      "sessions": 3,
+      "full_windows": 18,
+      "scored_windows": 18,
+      "detected_windows": 0,
+      "abstained_windows": 0,
+      "coverage": 1.0,
+      "recall_on_scored_windows": 0.0,
+      "detected_fraction_all_full_windows": 0.0
+    },
+    "slow_reading": {
+      "sessions": 3,
+      "full_windows": 18,
+      "scored_windows": 18,
+      "detected_windows": 0,
+      "abstained_windows": 0,
+      "coverage": 1.0,
+      "recall_on_scored_windows": 0.0,
+      "detected_fraction_all_full_windows": 0.0
+    }
+  },
+  "windows": [
+    {
+      "session_id": "6c516e9c-1c80-4497-8cfa-68fa2d09c0b3",
+      "profile": "burst_pause",
+      "start_ms": 0,
+      "status": "scored",
+      "bot_score": 0.9367916560356372
+    },
+    {
+      "session_id": "6c516e9c-1c80-4497-8cfa-68fa2d09c0b3",
+      "profile": "burst_pause",
+      "start_ms": 30000,
+      "status": "scored",
+      "bot_score": 0.8813431657139887
+    },
+    {
+      "session_id": "6c516e9c-1c80-4497-8cfa-68fa2d09c0b3",
+      "profile": "burst_pause",
+      "start_ms": 60000,
+      "status": "scored",
+      "bot_score": 0.9577278152250659
+    },
+    {
+      "session_id": "6c516e9c-1c80-4497-8cfa-68fa2d09c0b3",
+      "profile": "burst_pause",
+      "start_ms": 90000,
+      "status": "scored",
+      "bot_score": 0.9594831786788103
+    },
+    {
+      "session_id": "6c516e9c-1c80-4497-8cfa-68fa2d09c0b3",
+      "profile": "burst_pause",
+      "start_ms": 120000,
+      "status": "scored",
+      "bot_score": 0.9723168264066978
+    },
+    {
+      "session_id": "6c516e9c-1c80-4497-8cfa-68fa2d09c0b3",
+      "profile": "burst_pause",
+      "start_ms": 150000,
+      "status": "scored",
+      "bot_score": 0.9826158900395241
+    },
+    {
+      "session_id": "093b4ce7-cf60-484c-bbd9-fabf9038a595",
+      "profile": "curved_motion",
+      "start_ms": 0,
+      "status": "scored",
+      "bot_score": 0.014358200107794003
+    },
+    {
+      "session_id": "093b4ce7-cf60-484c-bbd9-fabf9038a595",
+      "profile": "curved_motion",
+      "start_ms": 30000,
+      "status": "scored",
+      "bot_score": 0.004007441258712909
+    },
+    {
+      "session_id": "093b4ce7-cf60-484c-bbd9-fabf9038a595",
+      "profile": "curved_motion",
+      "start_ms": 60000,
+      "status": "scored",
+      "bot_score": 0.005411637180205897
+    },
+    {
+      "session_id": "093b4ce7-cf60-484c-bbd9-fabf9038a595",
+      "profile": "curved_motion",
+      "start_ms": 90000,
+      "status": "scored",
+      "bot_score": 0.006071590695347412
+    },
+    {
+      "session_id": "093b4ce7-cf60-484c-bbd9-fabf9038a595",
+      "profile": "curved_motion",
+      "start_ms": 120000,
+      "status": "scored",
+      "bot_score": 0.006344891933345068
+    },
+    {
+      "session_id": "093b4ce7-cf60-484c-bbd9-fabf9038a595",
+      "profile": "curved_motion",
+      "start_ms": 150000,
+      "status": "scored",
+      "bot_score": 0.004999536719611965
+    },
+    {
+      "session_id": "0c57f50e-c80d-46ab-b0e5-b0a7502bb48d",
+      "profile": "slow_reading",
+      "start_ms": 0,
+      "status": "scored",
+      "bot_score": 0.00035024660769177333
+    },
+    {
+      "session_id": "0c57f50e-c80d-46ab-b0e5-b0a7502bb48d",
+      "profile": "slow_reading",
+      "start_ms": 30000,
+      "status": "scored",
+      "bot_score": 0.00020215059247611012
+    },
+    {
+      "session_id": "0c57f50e-c80d-46ab-b0e5-b0a7502bb48d",
+      "profile": "slow_reading",
+      "start_ms": 60000,
+      "status": "scored",
+      "bot_score": 0.0001280059950090298
+    },
+    {
+      "session_id": "0c57f50e-c80d-46ab-b0e5-b0a7502bb48d",
+      "profile": "slow_reading",
+      "start_ms": 90000,
+      "status": "scored",
+      "bot_score": 0.00016271888135352167
+    },
+    {
+      "session_id": "0c57f50e-c80d-46ab-b0e5-b0a7502bb48d",
+      "profile": "slow_reading",
+      "start_ms": 120000,
+      "status": "scored",
+      "bot_score": 0.00013966329382318661
+    },
+    {
+      "session_id": "0c57f50e-c80d-46ab-b0e5-b0a7502bb48d",
+      "profile": "slow_reading",
+      "start_ms": 150000,
+      "status": "scored",
+      "bot_score": 0.0001289739620869308
+    },
+    {
+      "session_id": "63ceee67-9b89-4d19-95e9-04c88948631e",
+      "profile": "burst_pause",
+      "start_ms": 0,
+      "status": "scored",
+      "bot_score": 0.9307888440195858
+    },
+    {
+      "session_id": "63ceee67-9b89-4d19-95e9-04c88948631e",
+      "profile": "burst_pause",
+      "start_ms": 30000,
+      "status": "scored",
+      "bot_score": 0.9489493253321288
+    },
+    {
+      "session_id": "63ceee67-9b89-4d19-95e9-04c88948631e",
+      "profile": "burst_pause",
+      "start_ms": 60000,
+      "status": "scored",
+      "bot_score": 0.9765603006656125
+    },
+    {
+      "session_id": "63ceee67-9b89-4d19-95e9-04c88948631e",
+      "profile": "burst_pause",
+      "start_ms": 90000,
+      "status": "scored",
+      "bot_score": 0.9706515824391658
+    },
+    {
+      "session_id": "63ceee67-9b89-4d19-95e9-04c88948631e",
+      "profile": "burst_pause",
+      "start_ms": 120000,
+      "status": "scored",
+      "bot_score": 0.9597062606710258
+    },
+    {
+      "session_id": "63ceee67-9b89-4d19-95e9-04c88948631e",
+      "profile": "burst_pause",
+      "start_ms": 150000,
+      "status": "scored",
+      "bot_score": 0.9411564810855776
+    },
+    {
+      "session_id": "f71c8431-e367-4b57-af00-4f777de9c7c0",
+      "profile": "curved_motion",
+      "start_ms": 0,
+      "status": "scored",
+      "bot_score": 0.012554219725266475
+    },
+    {
+      "session_id": "f71c8431-e367-4b57-af00-4f777de9c7c0",
+      "profile": "curved_motion",
+      "start_ms": 30000,
+      "status": "scored",
+      "bot_score": 0.007422826181035272
+    },
+    {
+      "session_id": "f71c8431-e367-4b57-af00-4f777de9c7c0",
+      "profile": "curved_motion",
+      "start_ms": 60000,
+      "status": "scored",
+      "bot_score": 0.007653225552503413
+    },
+    {
+      "session_id": "f71c8431-e367-4b57-af00-4f777de9c7c0",
+      "profile": "curved_motion",
+      "start_ms": 90000,
+      "status": "scored",
+      "bot_score": 0.007714507904919223
+    },
+    {
+      "session_id": "f71c8431-e367-4b57-af00-4f777de9c7c0",
+      "profile": "curved_motion",
+      "start_ms": 120000,
+      "status": "scored",
+      "bot_score": 0.006583835738702805
+    },
+    {
+      "session_id": "f71c8431-e367-4b57-af00-4f777de9c7c0",
+      "profile": "curved_motion",
+      "start_ms": 150000,
+      "status": "scored",
+      "bot_score": 0.005055680730676183
+    },
+    {
+      "session_id": "a3a91953-d960-49b8-a6f7-332933a47d5b",
+      "profile": "slow_reading",
+      "start_ms": 0,
+      "status": "scored",
+      "bot_score": 0.001193449357147744
+    },
+    {
+      "session_id": "a3a91953-d960-49b8-a6f7-332933a47d5b",
+      "profile": "slow_reading",
+      "start_ms": 30000,
+      "status": "scored",
+      "bot_score": 0.0001275701678415295
+    },
+    {
+      "session_id": "a3a91953-d960-49b8-a6f7-332933a47d5b",
+      "profile": "slow_reading",
+      "start_ms": 60000,
+      "status": "scored",
+      "bot_score": 0.00011678695372250167
+    },
+    {
+      "session_id": "a3a91953-d960-49b8-a6f7-332933a47d5b",
+      "profile": "slow_reading",
+      "start_ms": 90000,
+      "status": "scored",
+      "bot_score": 0.00010330966272036842
+    },
+    {
+      "session_id": "a3a91953-d960-49b8-a6f7-332933a47d5b",
+      "profile": "slow_reading",
+      "start_ms": 120000,
+      "status": "scored",
+      "bot_score": 0.00017604824348382194
+    },
+    {
+      "session_id": "a3a91953-d960-49b8-a6f7-332933a47d5b",
+      "profile": "slow_reading",
+      "start_ms": 150000,
+      "status": "scored",
+      "bot_score": 0.00016093002999973915
+    },
+    {
+      "session_id": "abe9a821-ae12-4e17-b977-0596e9833f7c",
+      "profile": "burst_pause",
+      "start_ms": 0,
+      "status": "scored",
+      "bot_score": 0.9238861221550339
+    },
+    {
+      "session_id": "abe9a821-ae12-4e17-b977-0596e9833f7c",
+      "profile": "burst_pause",
+      "start_ms": 30000,
+      "status": "scored",
+      "bot_score": 0.9681127515773686
+    },
+    {
+      "session_id": "abe9a821-ae12-4e17-b977-0596e9833f7c",
+      "profile": "burst_pause",
+      "start_ms": 60000,
+      "status": "scored",
+      "bot_score": 0.9698469994586472
+    },
+    {
+      "session_id": "abe9a821-ae12-4e17-b977-0596e9833f7c",
+      "profile": "burst_pause",
+      "start_ms": 90000,
+      "status": "scored",
+      "bot_score": 0.954452416516352
+    },
+    {
+      "session_id": "abe9a821-ae12-4e17-b977-0596e9833f7c",
+      "profile": "burst_pause",
+      "start_ms": 120000,
+      "status": "scored",
+      "bot_score": 0.9446379727504782
+    },
+    {
+      "session_id": "abe9a821-ae12-4e17-b977-0596e9833f7c",
+      "profile": "burst_pause",
+      "start_ms": 150000,
+      "status": "scored",
+      "bot_score": 0.9728048075132628
+    },
+    {
+      "session_id": "ae4c42f9-13af-4156-b03a-7a57ecb2ea2d",
+      "profile": "curved_motion",
+      "start_ms": 0,
+      "status": "scored",
+      "bot_score": 0.0067904306989421525
+    },
+    {
+      "session_id": "ae4c42f9-13af-4156-b03a-7a57ecb2ea2d",
+      "profile": "curved_motion",
+      "start_ms": 30000,
+      "status": "scored",
+      "bot_score": 0.007723357383282805
+    },
+    {
+      "session_id": "ae4c42f9-13af-4156-b03a-7a57ecb2ea2d",
+      "profile": "curved_motion",
+      "start_ms": 60000,
+      "status": "scored",
+      "bot_score": 0.00467237007385241
+    },
+    {
+      "session_id": "ae4c42f9-13af-4156-b03a-7a57ecb2ea2d",
+      "profile": "curved_motion",
+      "start_ms": 90000,
+      "status": "scored",
+      "bot_score": 0.009352256574225594
+    },
+    {
+      "session_id": "ae4c42f9-13af-4156-b03a-7a57ecb2ea2d",
+      "profile": "curved_motion",
+      "start_ms": 120000,
+      "status": "scored",
+      "bot_score": 0.008397374755373957
+    },
+    {
+      "session_id": "ae4c42f9-13af-4156-b03a-7a57ecb2ea2d",
+      "profile": "curved_motion",
+      "start_ms": 150000,
+      "status": "scored",
+      "bot_score": 0.006158254960160231
+    },
+    {
+      "session_id": "13fa6474-6724-4ef8-9ed9-de5d6aba03d5",
+      "profile": "slow_reading",
+      "start_ms": 0,
+      "status": "scored",
+      "bot_score": 0.001188307648899938
+    },
+    {
+      "session_id": "13fa6474-6724-4ef8-9ed9-de5d6aba03d5",
+      "profile": "slow_reading",
+      "start_ms": 30000,
+      "status": "scored",
+      "bot_score": 0.00011253431055624385
+    },
+    {
+      "session_id": "13fa6474-6724-4ef8-9ed9-de5d6aba03d5",
+      "profile": "slow_reading",
+      "start_ms": 60000,
+      "status": "scored",
+      "bot_score": 0.0003012151565760733
+    },
+    {
+      "session_id": "13fa6474-6724-4ef8-9ed9-de5d6aba03d5",
+      "profile": "slow_reading",
+      "start_ms": 90000,
+      "status": "scored",
+      "bot_score": 0.00021277633704021388
+    },
+    {
+      "session_id": "13fa6474-6724-4ef8-9ed9-de5d6aba03d5",
+      "profile": "slow_reading",
+      "start_ms": 120000,
+      "status": "scored",
+      "bot_score": 0.0002671046326057829
+    },
+    {
+      "session_id": "13fa6474-6724-4ef8-9ed9-de5d6aba03d5",
+      "profile": "slow_reading",
+      "start_ms": 150000,
+      "status": "scored",
+      "bot_score": 0.00020623081998317203
+    }
+  ],
+  "note": "Bot-only test report: precision and overall accuracy require separate human results. Windows are correlated within sessions."
+}

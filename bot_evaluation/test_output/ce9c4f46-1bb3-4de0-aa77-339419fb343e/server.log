@@ -1,0 +1,3 @@
+EvoGuard local dataset collector: http://localhost:5005/data-collection
+Raw dataset directory: C:\Users\Arjun\OneDrive\문서\GitHub\EvoGuard\bot_evaluation\test_output\ce9c4f46-1bb3-4de0-aa77-339419fb343e\raw
+No MongoDB, React server or Python service is required. Keep this one terminal running.

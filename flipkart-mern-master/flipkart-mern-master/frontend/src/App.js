@@ -35,6 +35,8 @@ import UserTable from './components/Admin/UserTable';
 import UpdateUser from './components/Admin/UpdateUser';
 import ReviewsTable from './components/Admin/ReviewsTable';
 import Wishlist from './components/Wishlist/Wishlist';
+
+import BehavioralCollector from './evoguard/EvoGuardLive';
 import NotFound from './components/NotFound';
 
 function App() {
@@ -54,7 +56,7 @@ function App() {
         families: ["Roboto:300,400,500,600,700"]
       },
     });
-  });
+  }, []);
 
   useEffect(() => {
     dispatch(loadUser());
@@ -70,16 +72,8 @@ function App() {
     });
   }, [pathname])
 
-  // disable right click
-  window.addEventListener("contextmenu", (e) => e.preventDefault());
-  window.addEventListener("keydown", (e) => {
-    if (e.keyCode == 123) e.preventDefault();
-    if (e.ctrlKey && e.shiftKey && e.keyCode === 73) e.preventDefault();
-    if (e.ctrlKey && e.shiftKey && e.keyCode === 74) e.preventDefault();
-  });
-  
   return (
-    <>
+    <BehavioralCollector>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -237,11 +231,13 @@ function App() {
           </ProtectedRoute>
         } ></Route>
 
+        <Route path="/data-collection" element={<p>Dataset collection runs separately in EvoMart. Use the EvoGuard panel for live monitoring.</p>} />
+
         <Route path="*" element={<NotFound />}></Route>
 
       </Routes>
       <Footer />
-    </>
+    </BehavioralCollector>
   );
 }
 

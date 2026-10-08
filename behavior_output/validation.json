@@ -1,0 +1,113 @@
+[
+  {
+    "source": "intelligence_service\\datasets\\evoguard_behavior\\evoguard_pilot_v1\\raw\\user00\\1afb1210-b9cc-42f6-a4a5-8d5e4c1e1187.json",
+    "session_id": "1afb1210-b9cc-42f6-a4a5-8d5e4c1e1187",
+    "status": "processed",
+    "warnings": [],
+    "unmatched_keydowns": 3,
+    "zero_dt_mouse_pairs_skipped": 0,
+    "equal_adjacent_timestamps": 3
+  },
+  {
+    "source": "intelligence_service\\datasets\\evoguard_behavior\\evoguard_pilot_v1\\raw\\user01\\4b96d604-f8bd-4f63-8314-c3a4db7024c4.json",
+    "session_id": "4b96d604-f8bd-4f63-8314-c3a4db7024c4",
+    "status": "processed",
+    "warnings": [
+      "sparse keyboard coverage (pilot review heuristic)"
+    ],
+    "unmatched_keydowns": 1,
+    "zero_dt_mouse_pairs_skipped": 0,
+    "equal_adjacent_timestamps": 5
+  },
+  {
+    "source": "intelligence_service\\datasets\\evoguard_behavior\\evoguard_pilot_v1\\raw\\user02\\fd531fa4-cf2c-4fab-9c72-bb537990f78c.json",
+    "session_id": "fd531fa4-cf2c-4fab-9c72-bb537990f78c",
+    "status": "processed",
+    "warnings": [],
+    "unmatched_keydowns": 0,
+    "zero_dt_mouse_pairs_skipped": 0,
+    "equal_adjacent_timestamps": 4
+  },
+  {
+    "source": "intelligence_service\\datasets\\evoguard_behavior\\evoguard_pilot_v1\\raw\\user03\\8b7837fd-9d8e-46e1-b910-a4146306e1e9.json",
+    "session_id": "8b7837fd-9d8e-46e1-b910-a4146306e1e9",
+    "status": "processed",
+    "warnings": [
+      "sparse keyboard coverage (pilot review heuristic)"
+    ],
+    "unmatched_keydowns": 1,
+    "zero_dt_mouse_pairs_skipped": 0,
+    "equal_adjacent_timestamps": 1
+  },
+  {
+    "source": "intelligence_service\\datasets\\evoguard_behavior\\evoguard_pilot_v1\\raw\\user04\\de369c90-2723-4af2-884d-c809b42ce169.json",
+    "session_id": "de369c90-2723-4af2-884d-c809b42ce169",
+    "status": "processed",
+    "warnings": [],
+    "unmatched_keydowns": 0,
+    "zero_dt_mouse_pairs_skipped": 0,
+    "equal_adjacent_timestamps": 0
+  },
+  {
+    "source": "intelligence_service\\datasets\\evoguard_behavior\\evoguard_pilot_v1\\raw\\user05\\cb40e6ec-8969-4839-ab9d-09e860aa8df9.json",
+    "session_id": "cb40e6ec-8969-4839-ab9d-09e860aa8df9",
+    "status": "processed",
+    "warnings": [
+      "sparse keyboard coverage (pilot review heuristic)"
+    ],
+    "unmatched_keydowns": 2,
+    "zero_dt_mouse_pairs_skipped": 0,
+    "equal_adjacent_timestamps": 5
+  },
+  {
+    "source": "intelligence_service\\datasets\\evoguard_behavior\\evoguard_pilot_v1\\raw\\user06\\9b33e9ea-b676-4504-b4cd-0c6d033c42c0.json",
+    "session_id": "9b33e9ea-b676-4504-b4cd-0c6d033c42c0",
+    "status": "processed",
+    "warnings": [
+      "sparse keyboard coverage (pilot review heuristic)"
+    ],
+    "unmatched_keydowns": 1,
+    "zero_dt_mouse_pairs_skipped": 0,
+    "equal_adjacent_timestamps": 1
+  },
+  {
+    "source": "intelligence_service\\datasets\\evoguard_behavior\\evoguard_pilot_v1\\raw\\user07\\2437d9c7-bb0c-4f6f-9e38-8c2a97a1e75c.json",
+    "session_id": "2437d9c7-bb0c-4f6f-9e38-8c2a97a1e75c",
+    "status": "processed",
+    "warnings": [
+      "sparse keyboard coverage (pilot review heuristic)"
+    ],
+    "unmatched_keydowns": 0,
+    "zero_dt_mouse_pairs_skipped": 0,
+    "equal_adjacent_timestamps": 1
+  },
+  {
+    "source": "intelligence_service\\datasets\\evoguard_behavior\\evoguard_pilot_v1\\raw\\user08\\e556bb63-7419-4561-be76-6305d5576f43.json",
+    "session_id": "e556bb63-7419-4561-be76-6305d5576f43",
+    "status": "processed",
+    "warnings": [],
+    "unmatched_keydowns": 0,
+    "zero_dt_mouse_pairs_skipped": 0,
+    "equal_adjacent_timestamps": 2
+  },
+  {
+    "source": "intelligence_service\\datasets\\evoguard_behavior\\evoguard_pilot_v1\\raw\\user09\\fc6da350-f321-434b-bb57-32de40c2fe26.json",
+    "session_id": "fc6da350-f321-434b-bb57-32de40c2fe26",
+    "status": "processed",
+    "warnings": [
+      "sparse keyboard coverage (pilot review heuristic)"
+    ],
+    "unmatched_keydowns": 0,
+    "zero_dt_mouse_pairs_skipped": 0,
+    "equal_adjacent_timestamps": 4
+  },
+  {
+    "source": "intelligence_service\\datasets\\evoguard_behavior\\evoguard_pilot_v1\\raw\\user10\\382556b2-1025-4152-a1ce-e9de479855f8.json",
+    "session_id": "382556b2-1025-4152-a1ce-e9de479855f8",
+    "status": "processed",
+    "warnings": [],
+    "unmatched_keydowns": 4,
+    "zero_dt_mouse_pairs_skipped": 0,
+    "equal_adjacent_timestamps": 1
+  }
+]

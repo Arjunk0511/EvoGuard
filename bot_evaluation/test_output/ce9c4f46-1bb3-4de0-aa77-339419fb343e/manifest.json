@@ -1,0 +1,24 @@
+{
+  "run_id": "ce9c4f46-1bb3-4de0-aa77-339419fb343e",
+  "generator_version": "heldout_patterns_1.0",
+  "purpose": "test_only",
+  "threshold": 0.5,
+  "model_sha256": "0738029c8143087e3d43ae71ee334c2036455c0996954a28a54a819b3effbbb8",
+  "runner_sha256": "ad26d31505a5fd49f8c294fadf004b4b635ba4133862392a5299caa93ec37eb1",
+  "patterns_sha256": "904ee2d23d41ca6e9e5ee2aefea0f974febb38dd227d0b2796d348e443b3d2cf",
+  "seed": 927100,
+  "sessions": [
+    {
+      "index": 0,
+      "profile": "burst_pause",
+      "seed": 927100,
+      "status": "failed",
+      "split_group": "burst_pause",
+      "run_id": "ce9c4f46-1bb3-4de0-aa77-339419fb343e",
+      "purpose": "test_only",
+      "error": "Page.wait_for_function: EvalError: Evaluating a string as JavaScript violates the following Content Security Policy directive because 'unsafe-eval' is not an allowed source of script: script-src 'self'\".\n\n    at eval (<anonymous>)\n    at predicate (eval at evaluate (:311:30), <anonymous>:4:60)\n    at next (eval at evaluate (:311:30), <anonymous>:29:33)",
+      "page_url": "http://127.0.0.1:5005/data-collection"
+    }
+  ],
+  "scope": "New scripted timing/motion variants using the same Playwright engine and task sequence; not independent real-world bot families"
+}

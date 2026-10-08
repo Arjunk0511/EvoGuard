@@ -17,6 +17,10 @@ LOG_DIR = os.path.join(
 
 
 # Model files
+# NOTE: bump these to _v3 once train_behavior_model.py has produced
+# behavior_model_v3.pkl / feature_columns_v3.pkl / model_metadata_v3.pkl
+# and you've validated it. Don't flip this until v3 is trained — app.py
+# will fail to start if these paths don't exist.
 BEHAVIOR_MODEL_PATH = os.path.join(
     MODELS_DIR,
     "behavior_model_v2.pkl"

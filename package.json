@@ -11,12 +11,13 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "cors": "...",
-    "dotenv": "...",
-    "express": "...",
-    "mongoose": "..."
+    "axios": "^1.7.2",
+    "cors": "2",
+    "dotenv": "16",
+    "express": "4",
+    "mongoose": "6"
   },
   "devDependencies": {
-    "nodemon": "..."
+    "nodemon": "3"
   }
 }

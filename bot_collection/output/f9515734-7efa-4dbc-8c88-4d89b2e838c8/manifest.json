@@ -1,0 +1,56 @@
+{
+  "run_id": "f9515734-7efa-4dbc-8c88-4d89b2e838c8",
+  "generator_version": "1.0",
+  "seed": 2026,
+  "sessions": [
+    {
+      "index": 0,
+      "profile": "instant",
+      "seed": 2026,
+      "status": "complete",
+      "split_group": "instant",
+      "run_id": "f9515734-7efa-4dbc-8c88-4d89b2e838c8",
+      "session_id": "c3177d97-d96c-4a0d-bf66-f817bd45ba0c",
+      "raw_path": "raw\\user9000\\c3177d97-d96c-4a0d-bf66-f817bd45ba0c.json",
+      "sha256": "411afa55ec1cc6f8ca98b2a85b15b35b2cfc04f10cf468cd057953485d1292a7",
+      "event_count": 4325,
+      "duration_ms": 91630.30000001192
+    },
+    {
+      "index": 1,
+      "profile": "uniform",
+      "seed": 2027,
+      "status": "complete",
+      "split_group": "uniform",
+      "run_id": "f9515734-7efa-4dbc-8c88-4d89b2e838c8",
+      "session_id": "04317162-a413-44e5-a478-1e906c543fcf",
+      "raw_path": "raw\\user9001\\04317162-a413-44e5-a478-1e906c543fcf.json",
+      "sha256": "140e068516b708a610f23174fb40909f009a4dae22542d52ebcede353c029c82",
+      "event_count": 1539,
+      "duration_ms": 96714
+    },
+    {
+      "index": 2,
+      "profile": "variable",
+      "seed": 2028,
+      "status": "complete",
+      "split_group": "variable",
+      "run_id": "f9515734-7efa-4dbc-8c88-4d89b2e838c8",
+      "session_id": "13dc521d-4f19-4171-be3a-4f2733aadb0f",
+      "raw_path": "raw\\user9002\\13dc521d-4f19-4171-be3a-4f2733aadb0f.json",
+      "sha256": "bb89a2f51acb717d7c08b59ee428a15f23995317642500de0374d0eb75a1275a",
+      "event_count": 1108,
+      "duration_ms": 103975
+    },
+    {
+      "index": 3,
+      "profile": "instant",
+      "seed": 2029,
+      "status": "failed",
+      "split_group": "instant",
+      "run_id": "f9515734-7efa-4dbc-8c88-4d89b2e838c8",
+      "error": "Locator.scroll_into_view_if_needed: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-remove]\").first\n"
+    }
+  ],
+  "scope": "local scripted automation, not representative of all bots"
+}

@@ -122,11 +122,17 @@ class BehavioralFeatureExtractor:
             x = event.get("x")
             y = event.get("y")
 
+            # 'code' is the physical key position (e.g. "KeyA"),
+            # never the typed character — we only need timing/rhythm,
+            # never what was typed.
+            code = event.get("code")
+
             normalized_events.append({
                 "type": event_type,
                 "timestamp": timestamp,
                 "x": x,
-                "y": y
+                "y": y,
+                "code": code
             })
 
         if len(normalized_events) == 0:
@@ -658,7 +664,89 @@ class BehavioralFeatureExtractor:
         )
 
         # --------------------------------------------------
-        # FINAL 81 FEATURES
+        # KEYSTROKE DYNAMICS
+        #
+        # Dwell time  = how long a key is held (keydown -> matching keyup)
+        # Flight time = gap between releasing one key and pressing the next
+        #
+        # Bots/scripted input tend to produce near-zero-variance timing
+        # (e.g. Playwright's page.keyboard.type with a fixed delay);
+        # humans show natural variance tied to muscle memory.
+        # --------------------------------------------------
+
+        keydown_events = [
+            e for e in normalized_events
+            if e["type"] == "keydown"
+        ]
+
+        keyup_events = [
+            e for e in normalized_events
+            if e["type"] == "keyup"
+        ]
+
+        key_event_count = (
+            len(keydown_events) + len(keyup_events)
+        )
+
+        # Pair each keydown with the next keyup of the same code
+        # (stack per code handles held/repeated keys reasonably).
+        open_presses = {}
+        dwell_times = []
+
+        keystroke_events_sorted = sorted(
+            [e for e in normalized_events if e["type"] in ("keydown", "keyup")],
+            key=lambda e: (e["timestamp"] if e["timestamp"] is not None else 0)
+        )
+
+        for event in keystroke_events_sorted:
+
+            code = event.get("code")
+
+            try:
+                timestamp = float(event["timestamp"])
+                if not np.isfinite(timestamp):
+                    continue
+            except (TypeError, ValueError):
+                continue
+
+            if event["type"] == "keydown":
+                open_presses.setdefault(code, []).append(timestamp)
+
+            elif event["type"] == "keyup":
+                stack = open_presses.get(code)
+                if stack:
+                    down_ts = stack.pop()
+                    dwell = timestamp - down_ts
+                    if dwell > 0:
+                        dwell_times.append(dwell)
+
+        # Flight time: gap between consecutive keydown events, in
+        # chronological order (captures overall typing rhythm).
+        keydown_timestamps = []
+        for event in keydown_events:
+            try:
+                ts = float(event["timestamp"])
+                if np.isfinite(ts):
+                    keydown_timestamps.append(ts)
+            except (TypeError, ValueError):
+                pass
+        keydown_timestamps.sort()
+
+        flight_times = [
+            keydown_timestamps[i] - keydown_timestamps[i - 1]
+            for i in range(1, len(keydown_timestamps))
+            if keydown_timestamps[i] - keydown_timestamps[i - 1] > 0
+        ]
+
+        key_typing_uniformity = (
+            self.safe_std(flight_times) / self.safe_mean(flight_times)
+            if len(flight_times) > 1 and self.safe_mean(flight_times) > 0
+            else 0.0
+        )
+
+        # --------------------------------------------------
+        # FINAL FEATURES
+        # (81 mouse features + keystroke features)
         # --------------------------------------------------
 
         features = {
@@ -997,7 +1085,31 @@ class BehavioralFeatureExtractor:
                         turning_angles,
                         1
                     )
-                )
+                ),
+
+            "key_event_count":
+                key_event_count,
+
+            "key_dwell_mean":
+                self.safe_mean(dwell_times),
+
+            "key_dwell_std":
+                self.safe_std(dwell_times),
+
+            "key_dwell_median":
+                self.safe_median(dwell_times),
+
+            "key_flight_mean":
+                self.safe_mean(flight_times),
+
+            "key_flight_std":
+                self.safe_std(flight_times),
+
+            "key_flight_median":
+                self.safe_median(flight_times),
+
+            "key_typing_uniformity":
+                key_typing_uniformity
         }
 
         return features
