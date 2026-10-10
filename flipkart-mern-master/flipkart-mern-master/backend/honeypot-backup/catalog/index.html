@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>EvoGuard Store</title>
+
+    <link
+        rel="stylesheet"
+        href="/honeypot/catalog/styles.css"
+    >
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="logo">
+        EvoGuard Store
+    </div>
+
+    <nav class="nav">
+        <a href="#" data-category="All">Home</a>
+        <a href="#" data-category="Electronics">Electronics</a>
+        <a href="#" data-category="Fashion">Fashion</a>
+        <a href="#" data-category="Home">Home & Living</a>
+        <a href="#" data-category="Accessories">Accessories</a>
+    </nav>
+
+</header>
+
+
+<main>
+
+    <!-- Hero -->
+
+    <section class="hero">
+
+        <h1>Discover Great Products</h1>
+
+        <p>
+            Browse our latest products and exclusive offers.
+        </p>
+
+    </section>
+
+
+    <!-- Search -->
+
+    <section class="search-section">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search products..."
+            autocomplete="off"
+        >
+
+        <button id="searchButton">
+            Search
+        </button>
+
+    </section>
+
+
+    <!-- Categories -->
+
+    <section class="categories">
+
+        <button data-category="All">
+            All
+        </button>
+
+        <button data-category="Electronics">
+            Electronics
+        </button>
+
+        <button data-category="Fashion">
+            Fashion
+        </button>
+
+        <button data-category="Home">
+            Home & Living
+        </button>
+
+        <button data-category="Accessories">
+            Accessories
+        </button>
+
+    </section>
+
+
+    <!-- Product count -->
+
+    <div class="results-header">
+
+        <h2>Products</h2>
+
+        <span id="resultCount"></span>
+
+    </div>
+
+
+    <!-- Products -->
+
+    <section
+        id="productGrid"
+        class="product-grid"
+    >
+    </section>
+
+
+    <!-- Product details -->
+
+    <section
+        id="productDetails"
+        class="product-details hidden"
+    >
+
+        <button id="closeDetails">
+            ← Back to products
+        </button>
+
+        <div id="detailsContent"></div>
+
+    </section>
+
+</main>
+
+
+<footer class="footer">
+
+    <p>
+        © 2026 EvoGuard Store
+    </p>
+
+</footer>
+
+
+<script src="/honeypot/catalog/script.js"></script>
+
+</body>
+
+</html>
